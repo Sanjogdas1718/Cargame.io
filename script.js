@@ -60,19 +60,21 @@ window.addEventListener("touchend", function(e) {
 
 
 
-setInterval(function Gameover(){
-  var bluecartop=parseInt(window.getComputedStyle(blueCar).getPropertyValue("top"))
-  var bluecarleft=parseInt(window.getComputedStyle(blueCar).getPropertyValue('left'))
-  var racecarLeft=parseInt(window.getComputedStyle(racecar).getPropertyValue("left"))
+setInterval(function Gameover() {
+  var bluecarRect = blueCar.getBoundingClientRect();
+  var racecarRect = racecar.getBoundingClientRect();
 
-if((bluecarleft===racecarLeft)&&(bluecartop>250)&&(bluecartop<450)){
-      result.style.display="block";
-      game.style.display='none';
-      score.innerHTML=`score:${counter}`;
-      counter=0;
-}
+  if (
+      bluecarRect.left < racecarRect.right &&
+      bluecarRect.right > racecarRect.left &&
+      bluecarRect.top < racecarRect.bottom &&
+      bluecarRect.bottom > racecarRect.top
+  ) {
+      result.style.display = "block";
+      game.style.display = "none";
+      score.innerHTML = `score: ${counter}`;
+      counter = 0;
+  }
+}, 10);
 
-
-
-},10)
 

@@ -1,92 +1,92 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-#game{
-    height: 500px;
-    width: 390px;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+#game {
+    height: 80vh;
+    width: 90%;
+    max-width: 400px;
     border: 1px solid black;
     margin: 1rem auto;
     background: url(assets/bg.jpg);
-    background-size: contain;
+    background-size: cover;
     overflow: hidden;
+    position: relative;
 }
 
-#bluecar{
-    height: 100px;
-    width: 130px;
-    /* background-color: black; */
-    position: relative;
+#bluecar {
+    height: 20%;
+    width: 33%;
+    position: absolute;
     transform: rotate(180deg);
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
+    animation: move 2s linear infinite;
     text-align: center;
-    animation: move 2s linear infinite ;
-}
-#bluecar img{
-    height: 100px;
 }
 
-@keyframes move{
-    0%{
-        top: 0px;
+#bluecar img {
+    width: 100%;
+    height: auto;
+}
+
+@keyframes move {
+    0% {
+        top: 0;
     }
-    100%{
-        top: 501px;
+    100% {
+        top: 100%;
     }
 }
 
-#racecar{
-    height: 100px;
-    width: 130px;
-    /* background-color: red; */
-    position: relative;
-    top: 250px; 
-     left: 130px;
-     text-align: center;
+#racecar {
+    height: 20%;
+    width: 33%;
+    position: absolute;
+    bottom: 10%;
+    left: calc(50% - 16.5%);
+    text-align: center;
 }
 
-#racecar img{
-    height: 100px;
+#racecar img {
+    width: 100%;
+    height: auto;
 }
 
-#result{
-    height: 200px;
-    width: 400px;
+#result {
+    height: 30%;
+    width: 90%;
+    max-width: 400px;
     background-color: cornflowerblue;
     margin: 1rem auto;
     border-radius: 20px;
-    font-size: 30px;
+    font-size: 1.2rem;
     text-align: center;
     color: white;
     display: none;
+    padding: 10px;
 }
 
-#score{
-    font-size: 2.2rem;
+#score {
+    font-size: 1.5rem;
     color: brown;
 }
 
-#btn{
-    padding: 0.5rem;
+#btn {
+    padding: 0.5rem 1rem;
     border-radius: 20px;
     border: none;
     background-color: black;
     color: aqua;
-    font-size: 25px;
+    font-size: 1.2rem;
     margin-top: 10px;
     cursor: pointer;
     text-transform: uppercase;
 }
-
-
-
-
-
-
-
-
-
-
-
