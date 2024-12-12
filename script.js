@@ -29,6 +29,29 @@ if(e.keyCode=='37'){
 }
 })
 
+// Variables for touch detection
+let startX = 0;
+
+// Touch start
+window.addEventListener("touchstart", function(e) {
+    startX = e.touches[0].clientX;
+});
+
+// Touch end
+window.addEventListener("touchend", function(e) {
+    let endX = e.changedTouches[0].clientX;
+    let difference = endX - startX;
+
+    var racecarLeft = parseInt(window.getComputedStyle(racecar).getPropertyValue('left'));
+
+    if (difference > 50 && racecarLeft < 260) {
+        // Swipe right
+        racecar.style.left = (racecarLeft + 130) + "px";
+    } else if (difference < -50 && racecarLeft > 0) {
+        // Swipe left
+        racecar.style.left = (racecarLeft - 130) + "px";
+    }
+});
 
 //conditions for game over
 //1. bluecarleft=racecarleft
@@ -52,3 +75,4 @@ if((bluecarleft===racecarLeft)&&(bluecartop>250)&&(bluecartop<450)){
 
 
 },10)
+
